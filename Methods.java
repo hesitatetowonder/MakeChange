@@ -7,7 +7,7 @@ public class Methods {
 
 	public static double price() {
 		double price;
-		
+
 		System.out.print("What is the price of the item? ");
 		price = kb.nextDouble();
 		return price;
@@ -33,34 +33,34 @@ public class Methods {
 
 	public static void makeChange(double item, double payment) {
 		double change = payment - item;
-		
+
 		if (change >= 10) {
 			tenDollar(change);
-		} 
-		else if ((change < 10) && (change >= 5)) {
+		}
+		else if (change < 10){
 			fiveDollar(change);
-		} 
-		else if ((change < 5) && (change >= 1)) {
+		}
+		else if (change < 5){
 			oneDollar(change);
-		} 
-		else if ((change < 1) && (change >=.25)){
+		}
+		else if (change < 1){
 			quarter(change);
- 		} 
-		else if ((change < .25) && (change >= .10)){
+ 		}
+		else if (change < .25){
  			dime(change);
- 		} 
-		else if ((change < .10) && (change >= .05)){
+ 		}
+		else if (change < .10){
  			nickel(change);
- 		} 
-		else if ((change < .05) && (change >= .01)){
+ 		}
+		else if (change < .05){
  			pennie(change);
- 		
+
  		}
 	}
 
 	public static void tenDollar(double leftOver) {
 		double tenDollarBill = 0;
-		
+
 		while (leftOver >= 10.00) {
 			leftOver = leftOver - 10;
 			tenDollarBill++;
@@ -90,15 +90,15 @@ public class Methods {
 			fiveDollarBill++;
 		}
 		System.out.print("\t" + fiveDollarBill + " Five Dollar Bill(s)");
-		if ((leftOver >= 1.00) && (leftOver < 5.00)) {
+		if (leftOver >= 1.00){
 			oneDollar(leftOver);
-		} else if ((leftOver >= .25) && (leftOver < 1.00)) {
+		} else if (leftOver >= .25){
 			quarter(leftOver);
-		} else if ((leftOver >= .10) && (leftOver < .25)) {
+		} else if (leftOver >= .10){
 			dime(leftOver);
-		} else if ((leftOver >= .05) && (leftOver < .10)) {
+		} else if (leftOver >= .05){
 			nickel(leftOver);
-		} else if ((leftOver >= .05) && (leftOver < .05)) {
+		} else if (leftOver >= .01){
 			pennie(leftOver);
 		}
 	}
@@ -111,13 +111,13 @@ public class Methods {
 			oneDollarBill++;
 		}
 		System.out.print("\t" + oneDollarBill + " One Dollar Bill(s)");
-		if ((leftOver >= .25) && (leftOver < 1.00)) {
+		if (leftOver >= .25){
 			quarter(leftOver);
-		} else if ((leftOver >= .10) && (leftOver < .25)) {
+		} else if (leftOver >= .10){
 			dime(leftOver);
-		} else if ((leftOver >= .05) && (leftOver < .10)) {
+		} else if (leftOver >= .05){
 			nickel(leftOver);
-		} else if ((leftOver >= .01) && (leftOver < .05)) {
+		} else if (leftOver >= .01){
 			pennie(leftOver);
 		}
 	}
@@ -130,11 +130,11 @@ public class Methods {
 			quarter++;
 		}
 		System.out.print("\t" + quarter + " Quarter(s)");
-		if ((leftOver >= .10) && (leftOver < .25)) {
+		if (leftOver >= .10){
 			dime(leftOver);
-		} else if ((leftOver >= .05) && (leftOver < .10)) {
+		} else if (leftOver >= .05){
 			nickel(leftOver);
-		} else if ((leftOver >= .01) && (leftOver < .05)) {
+		} else if (leftOver >= .01){
 			pennie(leftOver);
 		}
 	}
@@ -147,30 +147,30 @@ public class Methods {
 			dime++;
 		}
 		System.out.print("\t" + dime + " Dime(s)");
-		if ((leftOver >= .05) && (leftOver < .10)) {
+		if (leftOver >= .05){
 			nickel(leftOver);
-		} else if ((leftOver >= .01) && (leftOver < .05)) {
+		} else if (leftOver >= .01){
 
 		}
 	}
 
 	public static void nickel(double leftOver) {
 		double nickel = 0;
-	
+
 		while (leftOver >= .05) {
 			leftOver = leftOver - .05;
 			nickel++;
 		}
 		System.out.print("\t" + nickel + " Nickel(s)");
-		
-		if ((leftOver >= .01) && (leftOver < .05)) {
+
+		if (leftOver >= .01){
 			pennie(leftOver);
 		}
 	}
-	
+
 	public static void pennie(double leftOver) {
 		double pennie = 0;
-		
+
 		while (leftOver >= .01) {
 			leftOver = leftOver - .01;
 			pennie++;
