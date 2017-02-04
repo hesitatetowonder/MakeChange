@@ -24,7 +24,7 @@ public class Methods {
 		}
 		if (payment < item) {
 			owe = item - payment;
-			System.err.println("Error: Customer still owes " + owe);
+			System.err.println("Error: Customer did not provide sufficient amount");
 			return;
 		}
 		makeChange(item, payment);
@@ -65,8 +65,14 @@ public class Methods {
 			leftOver = leftOver - 10;
 			tenDollarBill++;
 		}
-		System.out.print(tenDollarBill + " Ten Dollar Bill(s)");
-		if (leftOver >= 5.00) {
+		if(tenDollarBill > 1) {
+			System.out.print(Math.round(tenDollarBill) + " Ten Dollar Bills");
+		}
+		else {
+			System.out.print(Math.round(tenDollarBill) + " Ten Dollar Bill");
+		}
+		
+		if ((leftOver >= 5.00) && (leftOver < 10)) {
 			fiveDollar(leftOver);
 		} else if (leftOver >= 1.00) {
 			oneDollar(leftOver);
@@ -89,7 +95,12 @@ public class Methods {
 			leftOver = leftOver - 5.00;
 			fiveDollarBill++;
 		}
-		System.out.print("\t" + fiveDollarBill + " Five Dollar Bill(s)");
+		if(fiveDollarBill > 1) {
+			System.out.print("\t\t" + Math.round(fiveDollarBill) + " Five Dollar Bills");
+		}
+		else if(fiveDollarBill == 1){
+			System.out.print("\t\t" + Math.round(fiveDollarBill) + " Five Dollar Bill");
+		}
 		if (leftOver >= 1.00){
 			oneDollar(leftOver);
 		} else if (leftOver >= .25){
@@ -110,7 +121,12 @@ public class Methods {
 			leftOver = leftOver - 1.00;
 			oneDollarBill++;
 		}
-		System.out.print("\t" + oneDollarBill + " One Dollar Bill(s)");
+		if(oneDollarBill > 1 ){
+			System.out.print("\t\t" + Math.round(oneDollarBill) + " One Dollar Bills");
+		}
+		else {
+			System.out.print("\t\t" + Math.round(oneDollarBill) + " One Dollar Bill");
+		}
 		if (leftOver >= .25){
 			quarter(leftOver);
 		} else if (leftOver >= .10){
@@ -129,7 +145,12 @@ public class Methods {
 			leftOver = leftOver - .25;
 			quarter++;
 		}
-		System.out.print("\t" + quarter + " Quarter(s)");
+		if(quarter > 1){
+			System.out.print("\t\t" + Math.round(quarter) + " Quarters");
+		}
+		else{
+			System.out.print("\t\t" + Math.round(quarter) + " Quarter");
+		}
 		if (leftOver >= .10){
 			dime(leftOver);
 		} else if (leftOver >= .05){
@@ -146,7 +167,12 @@ public class Methods {
 			leftOver = leftOver - .10;
 			dime++;
 		}
-		System.out.print("\t" + dime + " Dime(s)");
+		if(dime > 1){
+			System.out.print("\t\t" + Math.round(dime) + " Dimes");
+		}
+		else{
+			System.out.print("\t\t" + Math.round(dime) + " Dime");
+		}
 		if (leftOver >= .05){
 			nickel(leftOver);
 		} else if (leftOver >= .01){
@@ -161,7 +187,12 @@ public class Methods {
 			leftOver = leftOver - .05;
 			nickel++;
 		}
-		System.out.print("\t" + nickel + " Nickel(s)");
+		if(nickel > 1){
+			System.out.print("\t\t" + Math.round(nickel) + " Nickels");
+		}
+		else{
+			System.out.print("\t\t" + Math.round(nickel) + " Nickel");
+		}
 
 		if (leftOver >= .01){
 			pennie(leftOver);
@@ -175,8 +206,12 @@ public class Methods {
 			leftOver = leftOver - .01;
 			pennie++;
 		}
-		System.out.print("\t" +  pennie + " pennie(s)");
-
+		if(pennie > 1){
+			System.out.print("\t\t" + Math.round(pennie) + " pennies");
+		}
+		else{
+			System.out.println("\t\t" + Math.round(pennie) + " penny");
+		}
 	}
 }
 
