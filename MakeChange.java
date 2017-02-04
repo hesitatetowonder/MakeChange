@@ -6,7 +6,8 @@ public class MakeChange {
 		Scanner kb = new Scanner(System.in);
 		
 		Double itemPrice = Methods.price();
-		System.out.println( "Price is " + itemPrice);
+		
+		Methods.money(itemPrice);
 
 	}
 }
