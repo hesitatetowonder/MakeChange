@@ -4,9 +4,13 @@ package makeChange;
 public class MakeChange {
 	public static void main(String[] args) {
 		
-		Double itemPrice = Methods.price();
+		Double itemPrice = ModulusMethods.price();
 		
-		Methods.money(itemPrice);
+		Double change = ModulusMethods.payment(itemPrice);
+		
+	    int mainNum = ModulusMethods.convert(change);
+		
+	    ModulusMethods.tenDollarBill(mainNum);
 
 	}
 }
